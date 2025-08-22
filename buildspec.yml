@@ -23,7 +23,7 @@ phases:
   post_build:
     commands:
       - echo "Build completed. Preparing artifacts..."
-      - ls -la build
+      - ls -la dist
 
 artifacts:
   files:
