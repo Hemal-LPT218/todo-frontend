@@ -1,0 +1,32 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - echo "Installing dependencies..."
+      - npm install -g npm@latest
+      - npm install
+
+  pre_build:
+    commands:
+      - echo "Creating .env file..."
+      - echo "VITE_API_URL=$API_ENDPOINT" > .env
+      - cat .env
+
+  build:
+    commands:
+      - echo "Building React app..."
+      - npm run build
+
+  post_build:
+    commands:
+      - echo "Build completed. Preparing artifacts..."
+      - ls -la build
+
+artifacts:
+  files:
+    - "**/*"
+  base-directory: build
+  discard-paths: no

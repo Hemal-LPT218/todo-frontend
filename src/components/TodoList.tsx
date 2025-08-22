@@ -20,9 +20,12 @@ export default function TodoList({ todos, onToggle, onDelete }: Props) {
               checked={todo.completed}
               onChange={() => onToggle(todo.id, !todo.completed)}
             />
-            <span className={todo.completed ? "line-through" : ""}>
-              {todo.title}
-            </span>
+            <div>
+              <span className={todo.completed ? "line-through" : ""}>
+                {todo.title}
+              </span>
+              <p className="text-sm text-gray-500">{todo.description}</p>
+            </div>
           </div>
           <button
             onClick={() => onDelete(todo.id)}

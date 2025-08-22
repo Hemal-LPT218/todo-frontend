@@ -16,7 +16,7 @@ export default function App() {
     setLoading(true);
     try {
       const data = await getTodos();
-      setTodos(data);
+      setTodos(data.data);
     } catch (err) {
       console.error(err);
     } finally {
@@ -24,8 +24,8 @@ export default function App() {
     }
   };
 
-  const handleAdd = async (title: string) => {
-    const newTodo = await addTodo(title);
+  const handleAdd = async (title: string, description: string) => {
+    const newTodo = await addTodo(title, description);
     setTodos([...todos, newTodo]);
   };
 
