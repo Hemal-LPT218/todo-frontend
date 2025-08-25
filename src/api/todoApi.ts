@@ -22,9 +22,9 @@ export const addTodo = async (
 
 export const updateTodo = async (
   id: number,
-  completed: boolean
+  isCompleted: boolean
 ): Promise<Todo> => {
-  const res = await axios.patch(`${API_URL}/${id}`, { isCompleted: completed });
+  const res = await axios.patch(`${API_URL}/${id}`, { isCompleted });
   return res.data;
 };
 

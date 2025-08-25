@@ -2,7 +2,7 @@ import type { Todo } from "../types/todo";
 
 interface Props {
   todos: Todo[];
-  onToggle: (id: number, completed: boolean) => void;
+  onToggle: (id: number, isCompleted: boolean) => void;
   onDelete: (id: number) => void;
 }
 
@@ -17,11 +17,11 @@ export default function TodoList({ todos, onToggle, onDelete }: Props) {
           <div className="flex items-center gap-2">
             <input
               type="checkbox"
-              checked={todo.completed}
-              onChange={() => onToggle(todo.id, !todo.completed)}
+              checked={todo.isCompleted}
+              onChange={() => onToggle(todo.id, !todo.isCompleted)}
             />
             <div>
-              <span className={todo.completed ? "line-through" : ""}>
+              <span className={todo.isCompleted ? "line-through" : ""}>
                 {todo.title}
               </span>
               <p className="text-sm text-gray-500">{todo.description}</p>

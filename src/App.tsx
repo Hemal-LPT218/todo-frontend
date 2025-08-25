@@ -29,8 +29,8 @@ export default function App() {
     setTodos([...todos, newTodo]);
   };
 
-  const handleToggle = async (id: number, completed: boolean) => {
-    const updated = await updateTodo(id, completed);
+  const handleToggle = async (id: number, isCompleted: boolean) => {
+    const updated = await updateTodo(id, isCompleted);
     setTodos(todos.map((t) => (t.id === id ? updated : t)));
   };
 
