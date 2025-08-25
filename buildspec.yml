@@ -11,7 +11,7 @@ phases:
   pre_build:
     commands:
       - echo "Creating .env file..."
-      - echo "VITE_API_URL=https://$API_ENDPOINT" > .env
+      - echo "VITE_API_URL=https://$API_ENDPOINT/api" > .env
       - cat .env
 
   build:
