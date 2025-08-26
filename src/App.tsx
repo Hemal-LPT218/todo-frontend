@@ -46,7 +46,11 @@ export default function App() {
       {loading ? (
         <p className="text-center">Loading...</p>
       ) : (
-        <TodoList todos={todos} onToggle={handleToggle} onDelete={handleDelete} />
+        <TodoList
+          todos={todos}
+          onToggle={handleToggle}
+          onDelete={handleDelete}
+        />
       )}
     </div>
   );
